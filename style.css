@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  background-color: #dfe6e9;
+}
+
+.container {
+  width: 100%;
+  min-width: 530px;
+  max-height: 100vh;
+}
+
+#form {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wrapper-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form input {
+  margin-top: 10px;
+  margin-right: 1.5rem;
+  padding-top: 10px;
+}
+
+#description {
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+  border-radius: 16px 16px 16px 16px;
+  border-bottom: 3px solid #27ae60;
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  transition: 0.2s ease-out;
+}
+
+#start,
+#finish {
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+  border-radius: 16px 16px 16px 16px;
+  border-bottom: 3px solid #27ae60;
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  color: #999;
+}
+
+#addEventBtn {
+  margin-top: 10px;
+  background-color: #27ae60;
+  padding: 5px 25px;
+  border: none;
+  outline: none;
+  border-radius: 16px 16px 16px 16px;
+  border-bottom: 3px solid #2ecc71;
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.calendar {
+  width: 80%;
+  margin: 0 auto 20px;
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 30px 30px;
+  width: 100%;
+  background-color: #2ecc71;
+  color: #ffff;
+}
+
+#date,
+#year {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.weekdays {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #27ae60;
+  color: #ffff;
+}
+
+.week div.slide {
+  background-color: rgba(46, 204, 113, 0.7);
+  height: 20px;
+  position: absolute;
+  padding: 0;
+  justify-content: flex-start;
+  font-size: 12px;
+}
+
+.week div.hidden {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 20px;
+  position: absolute;
+  padding: 0;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.week {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 300;
+  position: relative;
+}
+
+.week div {
+  height: 130px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  text-shadow: 0 0.3rem 0.5rem rgba(112, 112, 112, 0.8);
+  border: 0.1px solid rgb(202, 202, 202);
+  transition: all 0.4s;
+  color: rgb(58, 58, 58);
+}
+
+.weekdays div,
+.week div {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.week div:hover {
+  background-color: #dfe6e9;
+}
+
+#prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: all 0.4s;
+}
+
+#prev:hover,
+#next:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/*======================= modal-window ======================== */
+
+.modal-wrapper {
+  background-color: rgba(128, 128, 128, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 3px solid #2ecc71;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#closeBtn, #close-error {
+  color: #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+
+#closeBtn:hover,
+#close-error:hover,
+#closeBtn:focus,
+#close-error:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-modal {
+  padding: 55px 20px 55px 55px;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 600px;
+  border: 1px solid black;
+  margin: 10px;
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.5);
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#upStart,
+#downStart,
+#upFinish,
+#downFinish {
+  cursor: pointer;
+}

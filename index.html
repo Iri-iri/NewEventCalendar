@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="form">
+        <div class="wrapper-form">
+        <input
+          id="description"
+          type="text"
+          placeholder="Enter your event here..."
+        />
+        <input id="start" type="date" />
+        <input id="finish" type="date" />
+      </div>
+        <button id="addEventBtn">Add</button>
+      </form>
+
+      <div class="calendar">
+        <div class="month">
+          <div id="prev">&#10094;</div>
+          <div class="date">
+            <p><span id="date"></span>&ensp;<span id="year"></span></p>
+          </div>
+          <div id="next">&#10095;</div>
+        </div>
+
+        <div class="weekdays">
+          <div>SUN</div>
+          <div>MON</div>
+          <div>TUE</div>
+          <div>WED</div>
+          <div>THU</div>
+          <div>FRI</div>
+          <div>SAT</div>
+        </div>
+
+        <div class="weekAll"></div>
+      </div>
+    </div>
+    <div class="modal-wrapper" id="error-no-value">
+      <div class="modal">
+        <div class="text-modal">
+        <h2>ERROR!</h2>
+        <p>Empty field</p>
+        </div>
+        <button id="close-error">&#10006;</button>
+      </div>
+    </div>
+    <div class="modal-wrapper" id="modal-table">
+      <div class="modal">
+        <table id="table" data-number="0">
+          <tr>
+            <th>Description</th>
+            <th>
+              Start of your event
+              <span id="upStart" class="green sortBtn">&uarr;</span>
+              <span id="downStart" class="green sortBtn">&darr;</span>
+            </th>
+            <th>
+              Finish of your event
+              <span id="upFinish" class="green sortBtn">&uarr;</span>
+              <span id="downFinish" class="green sortBtn">&darr;</span>
+            </th>
+            <tbody id="tbody"></tbody>
+          </tr>
+        </table>
+        <button id="closeBtn">&#10006;</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
