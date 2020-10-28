@@ -355,6 +355,9 @@ const dataTimeStamp = (year, month, eventObject) => {
   if (eventObject !== undefined) {
     events.push(eventObject);
   }
+
+  localStorage.setItem("events", JSON.stringify(events));
+
   const weeksTimeStamp = getCalendar(year, month);
 
   weeksTimeStamp.forEach((item, j) => {
@@ -390,5 +393,39 @@ const dataTimeStamp = (year, month, eventObject) => {
       showHiddenEvents(weeksTimeStamp);
     }
   });
+  
   console.log("weeksTimeStamp", weeksTimeStamp);
 };
+
+
+localStorage.getItem('events') ? (
+events = JSON.parse(localStorage.getItem('events')),
+drawEvents()
+) :
+events = [];
+
+const clearEventBtn = document.querySelector("#clearEventBtn");
+clearEventBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  
+  const modalClear = document.querySelector("#clear-calendar");
+  const yesClear = document.querySelector("#yes-clear");
+  const noClear = document.querySelector("#no-clear");
+
+  modalClear.style.display = "block";
+
+  yesClear.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    localStorage.removeItem("events");
+    modalClear.style.display = "none";
+    init();
+  });
+
+  noClear.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    modalClear.style.display = "none";
+    init();
+    drawEvents();
+  });
+    
+})
