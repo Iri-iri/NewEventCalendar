@@ -61,8 +61,11 @@ form input {
   color: #999;
 }
 
-#addEventBtn {
+#addEventBtn,
+#clearEventBtn,
+.btn {
   margin-top: 10px;
+  margin-right: 1.5rem;
   background-color: #27ae60;
   padding: 5px 25px;
   border: none;
@@ -200,7 +203,8 @@ form input {
   transform: translate(-50%, -50%);
 }
 
-#closeBtn, #close-error {
+#closeBtn,
+#close-error {
   color: #aaaaaa;
   display: flex;
   justify-content: center;
@@ -220,8 +224,17 @@ form input {
   cursor: pointer;
 }
 
+.block-buttons {
+  margin-top: 10px;
+}
+
+.btn {
+  margin-left: 1.5rem;
+}
+
 .text-modal {
   padding: 55px 20px 55px 55px;
+  text-align: center;
 }
 
 

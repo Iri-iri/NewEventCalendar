@@ -15,15 +15,16 @@
     <div class="container">
       <form id="form">
         <div class="wrapper-form">
-        <input
-          id="description"
-          type="text"
-          placeholder="Enter your event here..."
-        />
-        <input id="start" type="date" />
-        <input id="finish" type="date" />
-      </div>
+          <input
+            id="description"
+            type="text"
+            placeholder="Enter your event here..."
+          />
+          <input id="start" type="date" />
+          <input id="finish" type="date" />
+        </div>
         <button id="addEventBtn">Add</button>
+        <button id="clearEventBtn">Clear</button>
       </form>
 
       <div class="calendar">
@@ -44,17 +45,30 @@
           <div>FRI</div>
           <div>SAT</div>
         </div>
-
         <div class="weekAll"></div>
       </div>
+
     </div>
+
     <div class="modal-wrapper" id="error-no-value">
       <div class="modal">
         <div class="text-modal">
-        <h2>ERROR!</h2>
-        <p>Empty field</p>
+          <h2>ERROR!</h2>
+          <p>Empty field</p>
         </div>
         <button id="close-error">&#10006;</button>
+      </div>
+    </div>
+    <div class="modal-wrapper" id="clear-calendar">
+      <div class="modal">
+        <div class="text-modal">
+          <h2>All events will be deleted</h2>
+          <p>Are you sure?</p>
+          <div class="block-buttons">
+            <button class="btn" id="yes-clear">Yes</button>
+            <button class="btn" id="no-clear">No</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="modal-wrapper" id="modal-table">
@@ -78,6 +92,7 @@
         <button id="closeBtn">&#10006;</button>
       </div>
     </div>
+    
     <script src="index.js"></script>
   </body>
 </html>
