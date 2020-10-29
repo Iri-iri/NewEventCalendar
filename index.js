@@ -15,6 +15,15 @@ const months = [
 
 let events = [];
 
+const localEvents = () => {
+    localStorage.getItem('events') ? (
+      events = JSON.parse(localStorage.getItem('events')),
+      drawEvents()
+    ) :
+    events = [];
+  }
+
+
 const init = () => {
   const dateTitle = new Date();
 
@@ -397,12 +406,7 @@ const dataTimeStamp = (year, month, eventObject) => {
   console.log("weeksTimeStamp", weeksTimeStamp);
 };
 
-
-localStorage.getItem('events') ? (
-events = JSON.parse(localStorage.getItem('events')),
-drawEvents()
-) :
-events = [];
+localEvents();
 
 const clearEventBtn = document.querySelector("#clearEventBtn");
 clearEventBtn.addEventListener("click", (event) => {

@@ -237,6 +237,10 @@ form input {
   text-align: center;
 }
 
+.text-modal-padding55px {
+  padding: 55px;
+}
+
 
 table {
   border-collapse: collapse;
