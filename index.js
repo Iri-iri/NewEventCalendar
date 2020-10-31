@@ -421,6 +421,7 @@ clearEventBtn.addEventListener("click", (event) => {
   yesClear.addEventListener("click", (ev) => {
     ev.preventDefault();
     localStorage.removeItem("events");
+    events = [];
     modalClear.style.display = "none";
     init();
   });
